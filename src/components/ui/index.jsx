@@ -60,7 +60,7 @@ export function Button({
       background: `linear-gradient(135deg, ${colors.brandPrimary} 0%, #1340af 100%)`,
       color: colors.textOnDark,
       boxShadow:
-        "0 8px 32px rgba(29, 78, 216, 0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
+        "0 0 32px rgba(29, 78, 216, 0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
       border: `1px solid rgba(255, 255, 255, 0.2)`,
     },
     secondary: {
