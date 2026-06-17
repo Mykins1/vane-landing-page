@@ -61,6 +61,6 @@ export const typography = {
 
 export const layout = {
   maxWidth: 1080,
-  sectionPaddingY: 68,
+  sectionPaddingY: 40,
   pagePaddingX: 20,
 };

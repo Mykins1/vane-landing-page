@@ -37,7 +37,7 @@ export function Button({
     cursor: "pointer",
     border: "none",
     borderRadius: borderRadius ?? radii.lg,
-    transition: "opacity 0.15s, background 0.15s",
+    transition: "opacity 0.15s, background 0.15s, box-shadow 0.15s",
     width: width ?? "auto",
     ...extraStyle,
   };
@@ -57,8 +57,11 @@ export function Button({
 
   const variantStyles = {
     primary: {
-      background: colors.brandPrimary,
+      background: `linear-gradient(135deg, ${colors.brandPrimary} 0%, #1340af 100%)`,
       color: colors.textOnDark,
+      boxShadow:
+        "0 8px 32px rgba(29, 78, 216, 0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
+      border: `1px solid rgba(255, 255, 255, 0.2)`,
     },
     secondary: {
       background: "none",
