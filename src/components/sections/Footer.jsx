@@ -38,7 +38,7 @@ export default function Footer() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 7,
+                gap: 2,
                 marginBottom: 7,
               }}
             >

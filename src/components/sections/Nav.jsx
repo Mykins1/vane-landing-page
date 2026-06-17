@@ -30,7 +30,7 @@ export default function Nav({ scrolled }) {
       }}
     >
       <Container>
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
           <VaneIcon />
           <span
             style={{
