@@ -67,7 +67,7 @@ export default function Hero({ heroVis, onGetAccess, onSeeHow }) {
           lineHeight: 1.72,
         }}
       >
-        Vane unifies your business tools into a single, actionable feed. Stop drowning in open tabs—see every payment, client message, and project task in one centralized view, ranked by what moves the needle. <br/> And you know, Funmilayo no dey take Nonsense 😂.
+        Vane unifies your business tools into a single, actionable feed. Stop drowning in open tabs—see every payment, client message, and project task in one centralized view, ranked by what moves the needle. <br/> And you know, Funmilayo no dey take nonsense 😂.
       </p>
 
       {/* CTAs */}
