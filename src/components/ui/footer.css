@@ -1,8 +1,6 @@
 .footer-top-row {
     display: flex;
     flex-direction: column;
-    /* Mobile default: stacked */
-    align-items: flex-start;
     gap: 15px;
     margin-bottom: 28px;
 }
