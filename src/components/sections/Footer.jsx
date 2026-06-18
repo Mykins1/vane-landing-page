@@ -63,7 +63,7 @@ export default function Footer() {
               flexDirection: "column",
               gap: 10,
               flexWrap: "wrap",
-              alignItems: "flex-start",
+              alignItems: "left",
             }}
             aria-label="Footer navigation"
           >
