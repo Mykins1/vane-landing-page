@@ -1,13 +1,3 @@
-/**
- * data/index.js
- *
- * All static content for the landing page lives here.
- * Components import data; they don't define it inline.
- *
- * When you eventually connect to a CMS or API, this file is the
- * only thing that changes — no component edits needed.
- */
-
 import { ToolIcon, SwitchIcon, SlipIcon } from "../components/icons";
 import {
   StripeIcon,
@@ -16,7 +6,7 @@ import {
   SlackIcon,
 } from "../components/icons";
 
-/* ─── Feed demo cards ─────────────────────────────────────────── */
+/*Feed demo cards*/
 
 export const FEED_CARDS = [
   {
@@ -61,10 +51,10 @@ export const FEED_CARDS = [
   },
 ];
 
-/* ─── Problem cards ───────────────────────────────────────────── */
+/*Problem cards*/
 
 // Icons rendered as JSX elements here because they're tightly coupled
-// to display; no logic involved.
+
 export const PROBLEMS = [
   {
     id: "tool-overload",
@@ -86,7 +76,7 @@ export const PROBLEMS = [
   },
 ];
 
-/* ─── How it works steps ──────────────────────────────────────── */
+/*How it works steps*/
 
 export const STEPS = [
   {
@@ -109,7 +99,7 @@ export const STEPS = [
   },
 ];
 
-/* ─── Integration logos ───────────────────────────────────────── */
+/*Integration logos*/
 
 export const INTEGRATIONS = [
   { id: "stripe", name: "Stripe", icon: <StripeIcon /> },
@@ -118,7 +108,7 @@ export const INTEGRATIONS = [
   { id: "slack", name: "Slack", icon: <SlackIcon /> },
 ];
 
-/* ─── Footer links ────────────────────────────────────────────── */
+/*Footer links*/
 
 export const FOOTER_LINKS = [
   { label: "Privacy", href: "/privacy" },

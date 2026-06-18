@@ -20,7 +20,7 @@ function SuccessCard() {
         background: colors.bgWhite,
         border: `1px solid ${colors.successBg}`,
         borderRadius: radii.xl,
-        padding: "28px 20px",
+        padding: "21px",
         maxWidth: 360,
         margin: "0 auto",
         boxSizing: "border-box",
@@ -51,10 +51,36 @@ export default function Waitlist() {
   const [email, setEmail] = useState("");
   const [isFounder, setIsFounder] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const submit = () => {
-    // TODO: replace with POST to /api/waitlist
-    if (email.includes("@")) setSubmitted(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Stops the page from reloading on form submit
+    setError("");
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailRegex.test(email.trim())) {
+      setError("Please enter a valid email address (e.g., name@domain.com).");
+      return;
+    }
+
+    try {
+    // 1. Send the email and user data to your backend route or service
+    const response = await fetch("/api/waitlist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email.trim(), isFounder }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to join waitlist");
+    }
+
+    // 2. Only show success card if the network request succeeded
+    setSubmitted(true);
+  }catch  {
+    setError("Something went wrong on our end. Please try again.");
+  }
   };
 
   return (
@@ -85,7 +111,8 @@ export default function Waitlist() {
           <SuccessCard />
         ) : (
           <>
-            <div
+            <form
+              onSubmit={handleSubmit}
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -96,17 +123,36 @@ export default function Waitlist() {
                 boxSizing: "border-box",
               }}
             >
-              <TextInput
-                type="email"
-                placeholder="you@yourcompany.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && submit()}
-              />
-              <Button onClick={submit} variant="primary" width="100%">
+              <div style={{ width: "100%", textAlign: "left" }}>
+                <TextInput
+                  type="email"
+                  placeholder="you@yourcompany.com"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (error) setError(""); // Clears error message as they type
+                  }}
+                />
+                {error && (
+                  <p
+                    style={{
+                      color: colors.urgent,
+                      fontSize: 12,
+                      marginTop: 6,
+                      marginLeft: 4,
+                      // Removed position: "absolute"
+                    }}
+                  >
+                    {error}
+                  </p>
+                )}
+              </div>
+
+              {/* Button type="submit" automatically reacts to Enter keys inside the form */}
+              <Button type="submit" variant="primary" width="100%">
                 Join the Waitlist
               </Button>
-            </div>
+            </form>
 
             <div
               style={{

@@ -1,0 +1,35 @@
+.footer-top-row {
+    display: flex;
+    flex-direction: column;
+    /* Mobile default: stacked */
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+/* On md screens and up */
+@media (min-width: 768px) {
+    .footer-top-row {
+        flex-direction: row;
+        /* Desktop: side-by-side */
+        justify-content: space-between;
+    }
+}
+
+.footer-link {
+    text-decoration: none;
+    /* Removes default underline */
+    transition: text-decoration 0.2s ease;
+    /* Smooth transition */
+}
+
+/* Desktop hover */
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile tap & loading (clicked) states */
+.footer-link:active,
+.footer-link:focus {
+    text-decoration: underline;
+}

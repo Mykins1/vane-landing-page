@@ -9,6 +9,7 @@ import { VaneIcon } from "../icons";
 import { Container } from "../layout";
 import { FOOTER_LINKS } from "../../data";
 import { colors, typography } from "../../styles/tokens";
+import "../ui/footer.css";
 
 export default function Footer() {
   return (
@@ -23,14 +24,8 @@ export default function Footer() {
       <Container>
         {/* Top row */}
         <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            flexWrap: "wrap",
-            gap: 24,
-            marginBottom: 28,
-          }}
+          // 
+          className="footer-top-row"
         >
           {/* Brand */}
           <div>
@@ -38,8 +33,6 @@ export default function Footer() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 2,
-                marginBottom: 7,
               }}
             >
               <VaneIcon size={22} />
@@ -57,7 +50,6 @@ export default function Footer() {
                 fontSize: 13,
                 color: colors.textSecondary,
                 lineHeight: 1.55,
-                maxWidth: 200,
               }}
             >
               One feed for everything that matters.
@@ -68,9 +60,10 @@ export default function Footer() {
           <nav
             style={{
               display: "flex",
-              gap: 18,
+              flexDirection: "column",
+              gap: 10,
               flexWrap: "wrap",
-              alignItems: "center",
+              alignItems: "flex-start",
             }}
             aria-label="Footer navigation"
           >
@@ -78,7 +71,8 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                style={{ fontSize: 13, color: colors.textSecondary }}
+                className="footer-link"
+                style={{ fontSize: 13, color: colors.textPrimary,  }}
               >
                 {link.label}
               </a>

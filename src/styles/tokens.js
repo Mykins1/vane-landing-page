@@ -1,9 +1,3 @@
-/**
- * Design Tokens — single source of truth.
- * Every color, radius, shadow, and type value in the project comes from here.
- * To retheme: change values here, nothing else needs to change.
- */
-
 export const colors = {
   // Brand
   brandPrimary: "#1D4ED8",
